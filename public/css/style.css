@@ -1,6 +1,4 @@
-/* =========================
-   GLOBAL
-========================= */
+/* GLOBAL */
 
 body {
     font-family: "Plus Jakarta Sans", sans-serif !important;
@@ -16,9 +14,6 @@ a {
     text-decoration: none !important;
 }
 
-/* =========================
-   NAVBAR
-========================= */
 /* NAVBAR */
 
 .navbar {
@@ -32,9 +27,8 @@ a {
     padding: 0 1rem;
 }
 
-/* =========================
-   LOGO CONTAINER
-========================= */
+/* LOGO CONTAINER*/
+ 
 
 .logo {
     display: flex;
@@ -48,12 +42,12 @@ a {
     width: 55px;
     height: 55px;
 }
-#logo-text{
+
+#logo-text {
     color: #ff385c;
 }
-/* =========================
-   ROOF (TOP TRIANGLE)
-========================= */
+
+/* ROOF (TOP TRIANGLE)*/
 
 .roof {
     position: absolute;
@@ -72,12 +66,12 @@ a {
 }
 
 /* =========================
-   ES TEXT (CENTER FIX)
+   ES TEXT 
 ========================= */
 
 .es-text {
     position: absolute;
-    top: 18px;   /* 👈 important fix */
+    top: 18px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -86,12 +80,13 @@ a {
 
     color: #ff385c;
 
-    z-index: 2;  /* higher than roof */
+    z-index: 2;
+    /* higher than roof */
 }
 
-/* =========================
-   WINDOW (BOTTOM GRID)
-========================= */
+/* WINDOW (BOTTOM GRID) */
+   
+
 
 .window {
     position: absolute;
@@ -263,9 +258,7 @@ a {
 
 
 
-/* ==========================
-   HERO SECTION
-========================== */
+/* HERO SECTION */
 
 .hero-section {
     height: 60vh;
@@ -346,7 +339,7 @@ a {
     transform: scale(1.1);
 }
 
-/* IMPORTANT FIX (MAIN SCROLL CONTAINER) */
+/* FILETRS */
 #filters {
     display: flex;
     align-items: center;
@@ -363,7 +356,7 @@ a {
 
     flex: 1;
     min-width: 0;
-    /* ⭐ VERY IMPORTANT FIX */
+    
 
     padding: 0.8rem 0;
 
@@ -378,7 +371,6 @@ a {
 /* FILTER ITEM */
 .filter {
     flex: 0 0 auto;
-    /* ❗ prevents shrinking */
     min-width: 80px;
 
     text-align: center;
@@ -412,9 +404,7 @@ a {
     border-bottom: 2px solid black;
 }
 
-/* =========================
-   TAX TOGGLE (AIRBNB STYLE FIXED)
-========================= */
+/*  TAX TOGGLE */
 
 .tax-toggle {
     display: flex;
@@ -433,7 +423,7 @@ a {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
     margin-left: auto;
-    /* pushes toggle to extreme right */
+    
 }
 
 /* SWITCH */
@@ -496,18 +486,16 @@ a {
 
 
 
-/* =========================
-   CARD IMAGE WRAPPER
-========================= */
+/*  CARD IMAGE WRAPPER */
+
 
 .card-img-wrapper {
     position: relative;
     overflow: hidden;
 }
 
-/* =========================
-   TOP BAR (BADGE + HEART)
-========================= */
+/* TOP BAR (BADGE + HEART) */
+
 
 .image-top-bar {
     position: absolute;
@@ -522,9 +510,8 @@ a {
     z-index: 20;
 }
 
-/* =========================
-   GUEST FAVORITE BADGE
-========================= */
+/*  GUEST FAVORITE BADGE */
+
 
 .image-badge {
     background: rgba(255, 255, 255, 0.95);
@@ -541,17 +528,17 @@ a {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* =========================
+/* 
    WISHLIST FORM
-========================= */
+ */
 
 .wishlist-form {
     margin: 0;
 }
 
-/* =========================
+/*
    HEART BUTTON
-========================= */
+ */
 
 .wishlist-btn {
     border: none;
@@ -589,9 +576,9 @@ a {
     transform: scale(1.15);
 }
 
-/* =========================
+/* 
    IMAGE OVERLAY
-========================= */
+ */
 
 .overlay {
     position: absolute;
@@ -614,9 +601,9 @@ a {
     opacity: 1;
 }
 
-/* =========================
+/* 
    IMAGE ZOOM EFFECT
-========================= */
+ */
 
 .card-img-top {
     transition: transform 0.4s ease;
@@ -690,9 +677,9 @@ a {
     font-weight: 700;
 }
 
-/* =========================
+/* 
    NEW PAGE
-========================= */
+ */
 
 .new-page {
     min-height: 100vh;
@@ -706,9 +693,9 @@ a {
     padding: 3rem 0;
 }
 
-/* =========================
+/* 
    FORM CARD
-========================= */
+ */
 
 .new-listing-card {
     background: rgba(255, 255, 255, 0.92);
@@ -725,9 +712,9 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* =========================
+/* 
    HEADER
-========================= */
+ */
 
 .form-header {
     margin-bottom: 2.5rem;
@@ -770,9 +757,9 @@ a {
     font-size: 1rem;
 }
 
-/* =========================
+/* 
    FLOATING INPUTS
-========================= */
+ */
 
 .floating-group {
     position: relative;
@@ -843,9 +830,9 @@ textarea.custom-input {
         0 0 0 4px rgba(255, 56, 92, 0.12);
 }
 
-/* =========================
+/* 
    CATEGORY DROPDOWN
-========================= */
+ */
 
 .category-box {
 
@@ -940,9 +927,9 @@ textarea.custom-input {
     backdrop-filter: blur(1px);
 }
 
-/* =========================
+/* 
    IMAGE UPLOAD
-========================= */
+ */
 
 .image-upload-wrapper {
     margin-bottom: 2rem;
@@ -1033,9 +1020,9 @@ textarea.custom-input {
     color: #999;
 }
 
-/* =========================
+/* 
    BUTTON
-========================= */
+ */
 
 .create-btn {
     width: 100%;
@@ -1071,9 +1058,9 @@ textarea.custom-input {
         0 10px 25px rgba(255, 56, 92, 0.3);
 }
 
-/* =========================
+/* 
    EDIT PAGE
-========================= */
+ */
 
 .edit-icon {
     background:
@@ -1098,9 +1085,9 @@ textarea.custom-input {
         0 10px 25px rgba(124, 58, 237, 0.3);
 }
 
-/* =========================
+/* 
    SHOW PAGE
-========================= */
+ */
 
 .show-page {
     min-height: 100vh;
@@ -1123,9 +1110,9 @@ textarea.custom-input {
     animation: fadeUp 0.5s ease;
 }
 
-/* =========================
+/* 
    IMAGE SECTION
-========================= */
+ */
 
 .show-image-wrapper {
     position: relative;
@@ -1184,9 +1171,9 @@ textarea.custom-input {
     margin-right: 0.4rem;
 }
 
-/* =========================
+/* 
    CONTENT
-========================= */
+ */
 
 .show-content {
     padding: 2.5rem;
@@ -1210,7 +1197,7 @@ textarea.custom-input {
 
     font-size: 1.3rem;
     font-weight: 700;
-    
+
     margin-top: 1rem;
     margin-bottom: 2rem;
 
@@ -1242,9 +1229,9 @@ textarea.custom-input {
     font-size: 1rem;
 }
 
-/* =========================
+/* 
    DETAILS GRID
-========================= */
+ */
 
 .details-grid {
     display: grid;
@@ -1307,9 +1294,9 @@ textarea.custom-input {
     color: #666;
 }
 
-/* =========================
+/* 
    BUTTONS
-========================= */
+ */
 
 .show-buttons {
     display: flex;
@@ -1368,9 +1355,9 @@ textarea.custom-input {
         0 10px 25px rgba(255, 56, 92, 0.25);
 }
 
-/* =========================
+/* 
    REVIEWS SECTION
-========================= */
+ */
 
 .reviews-section {
     margin-top: 4rem;
@@ -1602,12 +1589,9 @@ textarea.custom-input {
 }
 
 
-/* =========================
+/* 
    FOOTER
-========================= */
-/* =========================
-   MODERN FOOTER (BRAND STYLE)
-========================= */
+ */
 
 footer {
     margin-top: 5rem;
@@ -1626,7 +1610,7 @@ footer {
     border-top: 1px solid #eee;
     border-radius: 2rem 2rem 0 0;
 
-    box-shadow: 0 -5px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.05);
 }
 
 /* ICON ROW */
@@ -1642,21 +1626,21 @@ footer {
     transition: 0.3s ease;
 }
 
-/* =========================
+/* 
    FACEBOOK (SKY BLUE)
-========================= */
+ */
 .fa-facebook-f {
     color: #1877F2;
 }
 
 .fa-facebook-f:hover {
     transform: translateY(-6px) scale(1.2);
-    text-shadow: 0 8px 20px rgba(24,119,242,0.5);
+    text-shadow: 0 8px 20px rgba(24, 119, 242, 0.5);
 }
 
-/* =========================
-   TWITTER / X (CLEAN BLACK + BLUE GLOW)
-========================= */
+/* 
+   TWITTER 
+ */
 .fa-x-twitter {
     color: #111;
 }
@@ -1664,18 +1648,18 @@ footer {
 .fa-x-twitter:hover {
     transform: translateY(-6px) scale(1.2);
     color: #1DA1F2;
-    text-shadow: 0 8px 20px rgba(29,161,242,0.4);
+    text-shadow: 0 8px 20px rgba(29, 161, 242, 0.4);
 }
 
-/* =========================
-   INSTAGRAM (REAL GRADIENT)
-========================= */
+/* 
+   INSTAGRAM 
+ */
 .fa-instagram {
     background: radial-gradient(circle at 30% 107%,
-        #fdf497 0%,
-        #fd5949 45%,
-        #d6249f 60%,
-        #285AEB 90%);
+            #fdf497 0%,
+            #fd5949 45%,
+            #d6249f 60%,
+            #285AEB 90%);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1683,7 +1667,7 @@ footer {
 
 .fa-instagram:hover {
     transform: translateY(-6px) scale(1.2);
-    filter: drop-shadow(0 8px 20px rgba(214,36,159,0.5));
+    filter: drop-shadow(0 8px 20px rgba(214, 36, 159, 0.5));
 }
 
 /* TEXT */
@@ -1744,9 +1728,9 @@ footer {
     display: none !important;
 }
 
-/* =========================
+/* 
    ANIMATION
-========================= */
+ */
 
 @keyframes fadeUp {
 
@@ -1762,9 +1746,9 @@ footer {
 
 }
 
-/* =========================
+/* 
    MOBILE
-========================= */
+ */
 
 @media(max-width:768px) {
 

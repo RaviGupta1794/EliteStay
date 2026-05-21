@@ -68,6 +68,21 @@
                                 </div>
                             </div>
 
+                            <!-- LOCATION -->
+                            <div class="floating-group">
+                                <input type="text" id="location" name="listing[location]" class="custom-input"
+                                    placeholder=" " required>
+
+                                <label for="location">Location</label>
+
+                                <div class="valid-feedback">
+                                    Location looks good!
+                                </div>  
+                                <div class="invalid-feedback">
+                                    Please enter location (city or area).
+                                </div>
+                            </div>
+
                             <!-- COUNTRY -->
                             <div class="floating-group">
                                 <input type="text" id="country" name="listing[country]" class="custom-input"
@@ -83,21 +98,8 @@
                                 </div>
                             </div>
 
-                            <!-- LOCATION -->
-                            <div class="floating-group">
-                                <input type="text" id="location" name="listing[location]" class="custom-input"
-                                    placeholder=" " required>
 
-                                <label for="location">Location</label>
-
-                                <div class="valid-feedback">
-                                    Location looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please enter location (city or area).
-                                </div>
-                            </div>
-                            <!-- 🔥 CATEGORY DROPDOWN (ADD HERE) -->
+                            <!-- CATEGORY DROPDOWN  -->
                             <div class="mb-4">
                                 <label class="form-label fw-semibold">
                                     Category
@@ -154,9 +156,9 @@
                                 </label>
 
                                 <input type="file" id="image" name="image" accept="image/*" required hidden onchange="
-            document.getElementById('file-text').innerText='Image Selected';
-            document.getElementById('file-name').innerText=this.files[0].name;
-        ">
+                                   document.getElementById('file-text').innerText='Image Selected';
+                                    document.getElementById('file-name').innerText=this.files[0].name;
+                                 ">
 
                                 <div class="invalid-feedback text-center mt-2">
                                     Please upload a property image.
