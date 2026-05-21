@@ -1,0 +1,182 @@
+<% layout("layouts/boilerplate") %>
+
+    <div class="new-page">
+
+        <div class="container py-5">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-8">
+
+                    <div class="new-listing-card">
+
+                        <!-- HEADER -->
+                        <div class="form-header text-center">
+
+                            <div class="form-icon">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+
+                            <h1>Create Your Stay</h1>
+
+                            <p>
+                                Share your amazing property with travelers worldwide.
+                            </p>
+
+                        </div>
+
+                        <form method="POST" action="/listings" class="needs-validation" novalidate
+                            enctype="multipart/form-data">
+
+                            <!-- TITLE -->
+                            <div class="floating-group">
+                                <input type="text" id="title" name="listing[title]" class="custom-input" placeholder=" "
+                                    required>
+                                <label for="title">Listing Title</label>
+                                <div class="valid-feedback">
+                                    Title looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter a title for your listing.
+                                </div>
+                            </div>
+
+                            <!-- DESCRIPTION -->
+                            <div class="floating-group textarea-group">
+                                <textarea id="description" name="listing[description]" class="custom-input"
+                                    placeholder=" " required></textarea>
+
+                                <label for="description">Description</label>
+
+                                <div class="valid-feedback">
+                                    Description looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please describe your property.
+                                </div>
+                            </div>
+
+                            <!-- PRICE -->
+                            <div class="floating-group">
+                                <input type="number" id="price" name="listing[price]" class="custom-input"
+                                    placeholder=" " required min="1">
+
+                                <label for="price">Price (₹)</label>
+
+                                <div class="invalid-feedback">
+                                    Please enter a valid price (minimum ₹1).
+                                </div>
+                            </div>
+
+                            <!-- COUNTRY -->
+                            <div class="floating-group">
+                                <input type="text" id="country" name="listing[country]" class="custom-input"
+                                    placeholder=" " required>
+
+                                <label for="country">Country</label>
+
+                                <div class="valid-feedback">
+                                    Country looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter country name.
+                                </div>
+                            </div>
+
+                            <!-- LOCATION -->
+                            <div class="floating-group">
+                                <input type="text" id="location" name="listing[location]" class="custom-input"
+                                    placeholder=" " required>
+
+                                <label for="location">Location</label>
+
+                                <div class="valid-feedback">
+                                    Location looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter location (city or area).
+                                </div>
+                            </div>
+                            <!-- 🔥 CATEGORY DROPDOWN (ADD HERE) -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    Category
+                                </label>
+
+                                <select name="listing[category]" class="form-select" required>
+                                    <option disabled selected hidden>Select Category</option>
+
+                                    <option value="trending">Trending</option>
+                                    <option value="rooms">Rooms</option>
+                                    <option value="city">City</option>
+                                    <option value="pools">Pools</option>
+                                    <option value="mountains">Mountains</option>
+                                    <option value="lake">Lake</option>
+                                    <option value="forest">Forest</option>
+                                    <option value="beach">Beach</option>
+                                    <option value="camping">Camping</option>
+                                    <option value="topview">Top Views</option>
+                                    <option value="cabins">Cabins</option>
+                                    <option value="luxury">Luxury</option>
+                                    <option value="snow">Snow</option>
+                                    <option value="relax">Relax</option>
+                                </select>
+
+                                <!-- VALIDATION MESSAGES -->
+                                <div class="valid-feedback">
+                                    Category looks good!
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Please select a category.
+                                </div>
+                            </div>
+
+                            <!-- IMAGE -->
+                            <div class="image-upload-wrapper">
+
+                                <label for="image" class="upload-card">
+
+                                    <div class="upload-icon">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    </div>
+
+                                    <h5>Upload Property Image</h5>
+
+                                    <p id="file-text">
+                                        Drag & drop or click to browse
+                                    </p>
+
+                                    <span id="file-name">
+                                        PNG, JPG, WEBP supported
+                                    </span>
+
+                                </label>
+
+                                <input type="file" id="image" name="image" accept="image/*" required hidden onchange="
+            document.getElementById('file-text').innerText='Image Selected';
+            document.getElementById('file-name').innerText=this.files[0].name;
+        ">
+
+                                <div class="invalid-feedback text-center mt-2">
+                                    Please upload a property image.
+                                </div>
+
+                            </div>
+
+                            <!-- BUTTON -->
+                            <button class="create-btn">
+                                <i class="fa-solid fa-plus"></i>
+                                Create Listing
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>

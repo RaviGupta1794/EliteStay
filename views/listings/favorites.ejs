@@ -1,0 +1,138 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">❤️ My Wishlist</h2>
+
+    <% if(listings.length === 0) { %>
+
+        <div class="text-center mt-4">
+            <h5 class="text-muted">
+                No saved listings yet.
+            </h5>
+        </div>
+
+    <% } %>
+
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4 wishlist-row">
+
+        <% for(let listing of listings) { %>
+
+            <div class="col wishlist-card">
+
+                <div class="card h-100">
+
+                    <!-- IMAGE SECTION -->
+                    <div class="card-img-wrapper">
+
+                        <!-- CLICKABLE IMAGE -->
+                        <a href="/listings/<%= listing._id %>" class="listing-link">
+
+                            <img
+                                src="<%= listing.image.url %>"
+                                class="card-img-top"
+                                alt="listing image"
+                            >
+
+                            <div class="overlay"></div>
+
+                        </a>
+
+                        <!-- TOP BAR -->
+                        <div class="image-top-bar">
+
+                            <div class="image-badge">
+                                Guest Favorite
+                            </div>
+
+                            <form
+                                action="/listings/<%= listing._id %>/favorite"
+                                method="POST"
+                                class="wishlist-form"
+                            >
+
+                                <button type="submit" class="wishlist-btn">
+
+                                    <i class="fa-solid fa-heart"></i>
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BODY -->
+                    <div class="card-body">
+
+                        <h5>
+                            <%= listing.title %>
+                        </h5>
+
+                        <p>
+                            ₹ <%= listing.price.toLocaleString("en-IN") %>
+                        </p>
+
+                        <p class="text-muted">
+                            <%= listing.location %>,
+                            <%= listing.country %>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        <% } %>
+
+    </div>
+
+</div>
+
+<script>
+
+document.querySelectorAll(".wishlist-form").forEach(form => {
+
+    form.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const response = await fetch(form.action, {
+            method: "POST",
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        });
+
+        const data = await response.json();
+
+        // REMOVE CARD INSTANTLY
+        if (!data.isFavorite) {
+
+            const card = form.closest(".wishlist-card");
+
+            card.remove();
+
+            const remainingCards =
+                document.querySelectorAll(".wishlist-card");
+
+            // SHOW EMPTY MESSAGE
+            if (remainingCards.length === 0) {
+
+                document.querySelector(".wishlist-row").innerHTML = `
+                    <div class="w-100 text-center mt-4">
+                        <h5 class="text-muted">
+                            No saved listings yet.
+                        </h5>
+                    </div>
+                `;
+            }
+        }
+
+    });
+
+});
+
+</script>

@@ -1,0 +1,267 @@
+<% layout("layouts/boilerplate") %>
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+
+        <div class="hero-content">
+            <h1 id="logo-text">EliteStay</h1>
+
+            <h1>Find your next stay</h1>
+
+            <p>
+                Discover unique homes, luxury rooms, and beautiful places around the world.
+            </p>
+
+            <a href="/listings/new" class="hero-btn">
+                Start Hosting
+            </a>
+
+        </div>
+
+    </div>
+    <div class="filters-wrapper">
+
+        <!-- LEFT ARROW -->
+        <button class="scroll-btn left" onclick="scrollFilters(-200)">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <!-- FILTERS -->
+            <div id="filters">
+
+                <a href="/listings?category=trending" class="filter <%= category === 'trending' ? 'active' : '' %>">
+                    <i class="fa-solid fa-fire"></i>
+                    <p>Trending</p>
+                </a>
+
+                <a href="/listings?category=rooms" class="filter <%= category === 'rooms' ? 'active' : '' %>">
+                    <i class="fa-solid fa-bed"></i>
+                    <p>Rooms</p>
+                </a>
+
+                <a href="/listings?category=city" class="filter <%= category === 'city' ? 'active' : '' %>">
+                    <i class="fa-solid fa-city"></i>
+                    <p>City</p>
+                </a>
+
+                <a href="/listings?category=pools" class="filter <%= category === 'pools' ? 'active' : '' %>">
+                    <i class="fa-solid fa-person-swimming"></i>
+                    <p>Pools</p>
+                </a>
+
+                <a href="/listings?category=mountains" class="filter <%= category === 'mountains' ? 'active' : '' %>">
+                    <i class="fa-solid fa-mountain"></i>
+                    <p>Mountains</p>
+                </a>
+
+                <a href="/listings?category=lake" class="filter <%= category === 'lake' ? 'active' : '' %>">
+                    <i class="fa-solid fa-water"></i>
+                    <p>Lake</p>
+                </a>
+
+                <a href="/listings?category=forest" class="filter <%= category === 'forest' ? 'active' : '' %>">
+                    <i class="fa-solid fa-tree"></i>
+                    <p>Forest</p>
+                </a>
+
+                <a href="/listings?category=beach" class="filter <%= category === 'beach' ? 'active' : '' %>">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                    <p>Beach</p>
+                </a>
+
+                <a href="/listings?category=camping" class="filter <%= category === 'camping' ? 'active' : '' %>">
+                    <i class="fa-solid fa-campground"></i>
+                    <p>Camping</p>
+                </a>
+
+                <a href="/listings?category=topview" class="filter <%= category === 'topview' ? 'active' : '' %>">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    <p>Top Views</p>
+                </a>
+
+                <a href="/listings?category=cabins" class="filter <%= category === 'cabins' ? 'active' : '' %>">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <p>Cabins</p>
+                </a>
+
+                <a href="/listings?category=luxury" class="filter <%= category === 'luxury' ? 'active' : '' %>">
+                    <i class="fa-solid fa-crown"></i>
+                    <p>Luxury</p>
+                </a>
+
+                <a href="/listings?category=snow" class="filter <%= category === 'snow' ? 'active' : '' %>">
+                    <i class="fa-solid fa-snowflake"></i>
+                    <p>Snow</p>
+                </a>
+
+                <a href="/listings?category=relax" class="filter <%= category === 'relax' ? 'active' : '' %>">
+                    <i class="fa-solid fa-spa"></i>
+                    <p>Relax</p>
+                </a>
+
+            </div>
+        <!-- RIGHT ARROW -->
+        <button class="scroll-btn right" onclick="scrollFilters(200)">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+
+          <div class="tax-toggle">
+
+                <span class="tax-label">Display total after taxes</span>
+
+                <label class="switch">
+
+                    <input type="checkbox" id="taxSwitch">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+    </div>
+
+    <!-- LISTINGS -->
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 g-4 mt-4">
+
+        <% listings.forEach((listing)=> { %>
+
+            <div class="col">
+
+                <a href="/listings/<%= listing._id %>" class="listing-links">
+
+                    <div class="card listing-card h-100">
+
+                        <img src="<%= listing.image.url %>" class="card-img-top listing-img" alt="listing_image">
+
+                         <!-- OVERLAY -->
+                            <div class="overlay"></div>
+
+                            <div class="image-top-bar">
+
+                                <div class="image-badge">
+                                    Guest Favorite
+                                </div>
+
+                                <form action="/listings/<%= listing._id %>/favorite" method="POST"
+                                    class="wishlist-form">
+                                    <button type="submit" class="wishlist-btn">
+                                        <% if (favorites && favorites.includes(listing._id.toString())) { %> <i
+                                                class="fa-solid fa-heart"></i>
+                                            <% } else { %>
+                                                <i class="fa-regular fa-heart"></i>
+                                                <% } %>
+                                    </button>
+                                </form>
+
+                            </div>
+
+                        <div class="card-body">
+
+                            <h6 class="fw-bold mb-1">
+                                <%= listing.title %>
+                            </h6>
+
+                            <p class="text-muted mb-2">
+                                📍 <%= listing.location %>,
+                                    <%= listing.country %>
+                            </p>
+
+                            <span class="price">
+                                ₹ <%= listing.price.toLocaleString("en-IN") %>
+                            </span>
+
+                            <span class="night-text">
+                                / night
+                            </span>
+                             <span class="tax-info d-none">
+                                <i> +18% GST</i>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <% }) %>
+
+    </div>
+    <script>
+function scrollFilters(value) {
+
+    document.getElementById("filters").scrollBy({
+        left: value,
+        behavior: "smooth"
+    });
+
+}
+
+ /* =========================
+           TAX TOGGLE LOGIC
+        ========================= */
+
+        let taxSwitch = document.getElementById("taxSwitch");
+
+        taxSwitch.addEventListener("change", function () {
+
+            let taxInfo = document.querySelectorAll(".tax-info");
+
+            taxInfo.forEach(el => {
+                if (taxSwitch.checked) {
+                    el.classList.remove("d-none");
+                } else {
+                    el.classList.add("d-none");
+                }
+            });
+
+        });
+
+</script>
+ <script>
+
+        document.querySelectorAll(".wishlist-form").forEach(form => {
+
+            form.addEventListener("submit", async (e) => {
+
+                e.preventDefault();
+
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                });
+
+                // NOT LOGGED IN
+                if (response.status === 401) {
+
+                    const data = await response.json();
+
+                    window.location.href = data.redirect;
+
+                    return;
+                }
+
+                // FAVORITE TOGGLE
+                const data = await response.json();
+
+                const icon = form.querySelector("i");
+
+                if (data.isFavorite) {
+
+                    icon.classList.remove("fa-regular");
+                    icon.classList.add("fa-solid");
+
+                } else {
+
+                    icon.classList.remove("fa-solid");
+                    icon.classList.add("fa-regular");
+                }
+
+            });
+
+        });
+
+    </script>

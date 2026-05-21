@@ -1,0 +1,153 @@
+<% layout("layouts/boilerplate") %>
+
+    <div class="new-page">
+
+        <div class="container py-5">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-7">
+
+                    <div class="new-listing-card">
+
+                        <!-- HEADER -->
+                        <div class="form-header text-center">
+
+                            <div class="form-icon">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+
+                            <h1>Create Account</h1>
+
+                            <p>
+                                Join Elite Stay and start exploring amazing stays.
+                            </p>
+
+                        </div>
+
+                        <form method="POST" action="/signup" class="needs-validation" novalidate>
+
+                            <!-- USERNAME -->
+                            <div class="floating-group">
+
+                                <input type="text" id="username" name="username" class="custom-input" placeholder=" "
+                                    required>
+
+                                <label for="username">Username</label>
+
+                                <div class="valid-feedback">
+                                    Username looks good!
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Please enter a username.
+                                </div>
+
+                            </div>
+
+                            <!-- EMAIL -->
+                            <div class="floating-group">
+
+                                <input type="email" id="email" name="email" class="custom-input" placeholder=" "
+                                    required>
+
+                                <label for="email">Email Address</label>
+
+                                <div class="valid-feedback">
+                                    Email looks good!
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Please enter a valid email.
+                                </div>
+
+                            </div>
+
+                            <!-- PASSWORD -->
+                            <div class="floating-group">
+
+                                <input type="password" id="password" name="password" class="custom-input"
+                                    placeholder=" " required minlength="6">
+
+                                <label for="password">Password</label>
+
+                                <div class="valid-feedback">
+                                    Password looks good!
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Password must be at least 6 characters.
+                                </div>
+
+                            </div>
+
+                            <!-- CONFIRM PASSWORD
+                            <div class="floating-group">
+
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="custom-input"
+                                    placeholder=" " required>
+
+                                <label for="confirmPassword">Confirm Password</label>
+
+                                <div class="invalid-feedback">
+                                    Please confirm your password.
+                                </div>
+
+                            </div> -->
+
+                            <!-- BUTTON -->
+                            <button class="create-btn">
+
+                                <i class="fa-solid fa-user-check"></i>
+                                Create Account
+
+                            </button>
+
+                            <!-- LOGIN LINK -->
+                            <div class="text-center mt-4">
+
+                                <p style="color:#777;">
+                                    Already have an account?
+
+                                    <a href="/login" class="login-link">
+                                        Login here
+                                    </a>
+                                </p>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        (() => {
+            'use strict';
+
+            const forms = document.querySelectorAll('.needs-validation');
+
+            Array.from(forms).forEach(form => {
+
+                form.addEventListener('submit', event => {
+
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add('was-validated');
+
+                }, false);
+
+            });
+
+        })();
+    </script>
