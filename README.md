@@ -49,7 +49,7 @@ EliteStay is an Airbnb-inspired hotel discovery platform that enables users to e
 - Render
 
 ## Live Demo
-https://elitestay-f4q4.onrender.com/listings
+https://elitestay-1-4v5r.onrender.com/
 Note: The application is hosted on Render's free tier and may take a few seconds to wake up on the first visit.
 
 ## Screenshots
