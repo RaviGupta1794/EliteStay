@@ -1,29 +1,4 @@
-# EliteStay 🏨
 
-EliteStay is an Airbnb-inspired hotel discovery platform that enables users to explore hotel listings through a modern and responsive interface.
-
-## Features
-- User Authentication & Authorization
-- Hotel Listings Management
-- Search & Filter Functionality
-- Review & Rating System
-- Session Management
-- MVC Architecture
-- Responsive Design
-
-## Tech Stack
-- Node.js
-- Express.js
-- MongoDB Atlas
-- EJS
-- HTML
-- CSS
-- JavaScript
-- Passport.js
-- Render
-
-## Live Demo
-https://elitestay-f4q4.onrender.com/listings
 ## # EliteStay 🏨
 
 EliteStay is an Airbnb-inspired hotel discovery platform that enables users to explore hotel listings through a modern and responsive interface.
@@ -50,6 +25,7 @@ EliteStay is an Airbnb-inspired hotel discovery platform that enables users to e
 
 ## Live Demo
 https://elitestay-1-4v5r.onrender.com/
+
 Note: The application is hosted on Render's free tier and may take a few seconds to wake up on the first visit.
 
 ## Screenshots
